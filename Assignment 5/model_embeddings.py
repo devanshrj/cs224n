@@ -77,7 +77,7 @@ class ModelEmbeddings(nn.Module):
         x_highway = self.Highway(x_conv_out)
 
         x_word_embed = self.dropout(x_highway)
-        x_word_embed = x_word_embed.reshape(sentence_length, -1, self.word_embed_size)
+        x_word_embed = x_word_embed.view(sentence_length, batch_size, self.word_embed_size)
 
         return x_word_embed
 

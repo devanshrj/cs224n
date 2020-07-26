@@ -20,6 +20,12 @@ Local Test -> Corpus BLEU: 83.1101499133603
 - Read docs completely!!
 - Pytorch
 ```
+# cuda
+device = torch.device("cuda:0")
+model = model.to(device)
+# or
+model = model.cuda()
+
 # required to call nn.Module's init
 super(Highway, self).__init__()
 
