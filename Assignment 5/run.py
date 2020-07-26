@@ -131,6 +131,12 @@ def train(args: Dict):
                 hidden_size=int(args['--hidden-size']),
                 dropout_rate=float(args['--dropout']),
                 vocab=vocab, no_char_decoder=args['--no-char-decoder'])
+
+    device = torch.device("cuda:0" if args['--cuda'] else "cpu")
+    print('use device: %s' % device, file=sys.stderr)
+
+    model = model.to(device)
+    
     model.train()
 
     uniform_init = float(args['--uniform-init'])
@@ -142,10 +148,7 @@ def train(args: Dict):
     vocab_mask = torch.ones(len(vocab.tgt))
     vocab_mask[vocab.tgt['<pad>']] = 0
 
-    device = torch.device("cuda:0" if args['--cuda'] else "cpu")
-    print('use device: %s' % device, file=sys.stderr)
-
-    model = model.to(device)
+    
 
     optimizer = torch.optim.Adam(model.parameters(), lr=float(args['--lr']))
 
