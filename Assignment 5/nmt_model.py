@@ -114,8 +114,7 @@ class NMT(nn.Module):
         target_padded = self.vocab.tgt.to_input_tensor(
             target, device=self.device)  # Tensor: (tgt_len, b)
 
-        enc_hiddens, dec_init_state = self.encode(source_padded_chars,
-                                                  source_lengths)
+        enc_hiddens, dec_init_state = self.encode(source_padded_chars, source_lengths)
 
         enc_masks = self.generate_sent_masks(enc_hiddens, source_lengths)
 
@@ -167,8 +166,7 @@ class NMT(nn.Module):
         ### COPY OVER YOUR CODE FROM ASSIGNMENT 4
         ### Except replace "self.model_embeddings.source" with "self.model_embeddings_source"
 
-        X = self.model_embeddings_source(
-            source_padded)  # applying nn.Embeddings
+        X = self.model_embeddings_source(source_padded)  # applying nn.Embeddings
 
         # step 2
         X = nn.utils.rnn.pack_padded_sequence(X, source_lengths)

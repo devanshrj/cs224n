@@ -32,7 +32,7 @@ class CNN(nn.Module):
     	self.kernel_size	 = kernel_size
     	self.m_word          = max_word_length
 
-    	self.conv1D = nn.Conv1d(in_channels=self.input_channels, out_channels=self.num_filters, kernel_size=5, padding=1)
+    	self.conv1D = nn.Conv1d(in_channels=self.input_channels, out_channels=self.num_filters, kernel_size=5, padding=1, bias=True)
     	# kernel size for max pool = m_word - kernel_size + 1 + 2 * padding
     	self.max_pool = nn.MaxPool1d(kernel_size=(self.m_word - kernel_size + 3))
 
