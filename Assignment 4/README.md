@@ -7,6 +7,7 @@ Iterations = 90000
 Cum. loss = 25.61
 Cum ppl = 3.47 
 Cum. examples = 63977
+<br>
 **Validation**: iter 90000, dev. ppl 7.184368
 <br>
 ### Corpus BLEU: 35.752705837873755
@@ -37,4 +38,5 @@ output = layer(input)
 output = nn.Softmax()(input)
 
 # alternately, a lot of such layers have nn.functional functions defined and those can be used as well
-output = F.softmax(input) 
+output = F.softmax(input)
+```

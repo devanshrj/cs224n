@@ -19,8 +19,6 @@ B) Steps required for parsing a sentence containing N words = 2N <br>
 The SHIFT transition takes N steps for shifting N words from the buffer to the stack. <br>
 Establishing (head,dependent) relations between the N words takes N steps for N words. <br>
 
-F) To - do
-
 ## Model Performance
 
 After training: <br>

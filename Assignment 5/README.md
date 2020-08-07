@@ -15,11 +15,10 @@ Thus, padding_size = 1. (1 on each side)
 Local Test -> Corpus BLEU: 83.1101499133603
 <br>
 
-
 ## Learning Outcomes
 - Read docs completely!!
 - Pytorch
-```
+```python
 # cuda
 device = torch.device("cuda:0")
 model = model.to(device)
@@ -31,4 +30,4 @@ super(Highway, self).__init__()
 
 # to manipulate shape of tensor
 reshape(), view(), transpose(), permute()
-
+```
